@@ -4,19 +4,18 @@
 
 For this project, we will be using data from the [Waymo Open dataset](https://waymo.com/open/).
 
-The data required to finish this project in the workspace, had been already provided. No download was necessary.
+[OPTIONAL] - The files can be downloaded directly from the website as tar files or from the [Google Cloud Bucket](https://console.cloud.google.com/storage/browser/waymo_open_dataset_v_1_2_0_individual_files/) as individual tf records. We have already provided the data required to finish this project in the workspace, so you don't need to download it separately.
 
 ## Structure
 
 ### Data
 
-The data for training, validation and testing is organized as follow:
+The data you will use for training, validation and testing is organized as follow:
 ```
-/home/workspace/MY-nd013-c1-vision-starter/data/
-    - training_and_validation - contains 96 files to train and validate your models
-    create.split ??
-    - train: contain the train data (86 files)
-    - val: contain the val data (10)
+/home/workspace/data/waymo
+    - training_and_validation - contains 97 files to train and validate your models
+    - train: contain the train data (empty to start)
+    - val: contain the val data (empty to start)
     - test - contains 3 files to test your model and create inference videos
 ```
 
