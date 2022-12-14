@@ -49,14 +49,19 @@ The experiments folder(/home/workspace/MY-nd013-c1-vision-starter/experiments/) 
 A notebook `Exploratory Data Analysis`  is provided, in which the analysis is performed.  
 
 ### Dataset analysis
-In the dataset, we have to fit rectangular bounding boxes on the images with objects ,which includes pedestrians, cyclists and cars.Images are taken from different places, and different weather conditions and at different time of the day (day/night).The image set contains diverse set of images of which some are blurry, clear, light and some are foggy or dark. A sample image in dark and foggy background is provided below:  
+In the dataset, we have to fit rectangular bounding boxes on the images with objects ,which includes pedestrians, cyclists and cars.Images are taken from different places, and different weather conditions and at different time of the day (day/night).The image set contains diverse set of images of which some are blurry, clear, light and some are foggy or dark. A sample of 10 is shown in notebook `Exploratory Data Analysis`.  
 
 <img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png">  
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10_random-images_foggy_big.png">
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10_random-images_foggy_big.png">  
 
-[![](https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png)](https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png)
+First I analyzed the distribution of the labels. The dataset consists mostly of the labelsfor cars and pedestrians with the sample size of cyclists being very small(  for more see “Exploratory Data Analysis.ipynb”):
+
 
 ### Cross validation
+I used 100 tfrecord files, which I shuffle the data randomly and then split into training,testing and validation sets. The reason for random shuffling is to reduce the class imbalance in each sample. The shuffling ensures approximately equal distribution of samples in the training,testing and validation datasets.
 
+In this case I used 86 : 10 as the proportion of training and validation data since I'm using only 100 tfrecord samples. This ensures that there is sufficient data for training as well as validation.We are using 10% (0.1) of the sample as the test set to check the error rate and if the model is overfitting. Three tfrecord were for testing.
 
 ## Training
 With the created `pipeline_new.config`  and the provided `model_main_tf2.py` files training and evaluation can be started.
@@ -72,9 +77,22 @@ python experiments/model_main_tf2.py --model_dir=experiments/(reference or exper
 The training was monitored with  tensorboard.  
 
 ### Reference experiment
+The pretrained model  without augmentation , model loss is shown below:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+Initially the model was overffiting as the training loss was diverging from the validation loss.The training loss is indicated in orange and the validation loss in blue.This divergence indicates a significant error rate during model validation- an indication that the model is overfitting.
+The precision and recall curves indicate that the performance of the model slowly increases, as both precision and recall start to increase. A high recall rate is often not suitable and the model performance is not that great.
+Precision:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+Recall:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
 
 
 ### Improve on the reference
 
-The reference experiment did not yield optimal results. However, you can make multiple changes to the config file to improve this model. One obvious change consists in improving the data augmentation strategy. The [`preprocessor.proto`](https://github.com/tensorflow/models/blob/master/research/object_detection/protos/preprocessor.proto) file contains the different data augmentation method available in the Tf Object Detection API. To help you visualize these augmentations, we are providing a notebook: `Explore augmentations.ipynb`. Using this notebook, try different data augmentation combinations and select the one you think is optimal for our dataset. Justify your choices in the writeup.
 
