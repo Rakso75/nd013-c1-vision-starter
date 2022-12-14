@@ -20,7 +20,8 @@ The data for training, validation and testing is organized as shown below(/home/
     - val: contains the evaluation data (10 files)
     - test - contains 3 files to test model and create inference videos
 ```
-xx
+For this project a Github repository is provided(https://github.com/udacity/nd013-c1-vision-starter), which I forked and cloned to my workspace(https://github.com/Rakso75/nd013-c1-vision-starter).  
+In this repository are all files mentioned  in the following as  "provided".  
 
 ### Experiments
 
@@ -45,9 +46,14 @@ The experiments folder(/home/workspace/MY-nd013-c1-vision-starter/experiments/) 
 ```
 
 ## Dataset
+A notebook `Exploratory Data Analysis`  is provided, in which the analysis is performed.  
 
 ### Dataset analysis
+In the dataset, we have to fit rectangular bounding boxes on the images with objects ,which includes pedestrians, cyclists and cars.Images are taken from different places, and different weather conditions and at different time of the day (day/night).The image set contains diverse set of images of which some are blurry, clear, light and some are foggy or dark. A sample image in dark and foggy background is provided below:  
 
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png">  
+
+[![](https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png)](https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png)
 
 ### Cross validation
 
