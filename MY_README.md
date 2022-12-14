@@ -94,5 +94,47 @@ Recall:
 
 
 ### Improve on the reference
+To improve on the model performance, the first step was to augment the images by converting them to grayscale with a probability of 0.2. After this, we have clamped the contrast values between 0.6 and 1.0 such that more lighting datapoints are available for classification. A greater part of the images were a bit darker and increasing the brightness to 0.3 provided an even datapoint which could be better classified with the model.The pipeline changes are there in ```pipeline_new.config```
+
+Augmentations applied:
+
+- 0.02 probability of grayscale conversion
+- brightness adjusted to 0.3
+- contrast values between 0.6 and 1.0
+
+Grayscale images:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+Night(Darker) Images:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+Contrast Images:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+
+
+The details of the run can be found here : "Explore augmentations.ipynb"
+
+The model loss with augmentation :
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+Precision with Augmentation:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+Recall with Augmentation:
+
+<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+
+The loss is lower than the previous loss (un-augmented model). This is an indication of better performance. There should be more samples of augmented datapoints such as
+combining the contrast values with grayscale. Brightness can also be clamped within a limit instead of fixing it to 0.3
+However the most important point is to add more samples of cyclists,pedestrians which are in a low quantity in the dataset. This is an inherent requirement since model biases play an important role in the loss curves and lesser the diversity in training samples, the lower will be the accuracy. 
+
+We have reduced overfitting to an extent with augmentation, however better classification results would be resulting from a more balanced dataset.
+
 
 
