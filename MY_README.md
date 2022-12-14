@@ -120,6 +120,8 @@ The details of the run can be found here : "Explore augmentations.ipynb"
 
 The model loss with augmentation :
 
+<img src=https://drive.google.com/file/d/1Vj5XwubP3y1Wv8MvbsGXdQAYdnDN4HSo/view?usp=share_link>
+
 <img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
 
 Precision with Augmentation:
