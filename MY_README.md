@@ -51,9 +51,9 @@ A notebook `Exploratory Data Analysis`  is provided, in which the analysis is pe
 ### Dataset analysis
 In the dataset, we have to fit rectangular bounding boxes on the images with objects ,which includes pedestrians, cyclists and cars.Images are taken from different places, and different weather conditions and at different time of the day (day/night).The image set contains diverse set of images of which some are blurry, clear, light and some are foggy or dark. A sample of 10 is shown in notebook `Exploratory Data Analysis`.  
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10-random-images-9_night.png">  
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10_random-images_foggy_big.png">
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/10_random-images_foggy_big.png">  
+![](images/10-random-images-9_night.png.jpg)
+![](images/)10_random-images_foggy_big.png)
+![](images/10_random-images_foggy_big.png)  
 
 First I analyzed the distribution of the labels. The dataset consists mostly of the labelsfor cars and pedestrians with the sample size of cyclists being very small(  for more see “Exploratory Data Analysis.ipynb”):
 
@@ -78,21 +78,20 @@ python experiments/model_main_tf2.py --model_dir=experiments/(reference or exper
 The training was monitored with  tensorboard(https://www.tensorflow.org/tensorboard/get_started).  
 
 ### Reference experiment
-The pretrained model  without augmentation , model loss is shown below:
+The pretrained model  without augmentation , model loss is shown below:  
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+![](images/Tensorboard_reference_Scalars.jpg)
 
 Initially the model was overffiting as the training loss was diverging from the validation loss.The training loss is indicated in orange and the validation loss in blue.This divergence indicates a significant error rate during model validation- an indication that the model is overfitting.
 The precision and recall curves indicate that the performance of the model slowly increases, as both precision and recall start to increase. A high recall rate is often not suitable and the model performance is not that great.  
 
-Precision:
+Precision:  
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
+![](images/Tensorboard_reference_Precision.jpg)  
 
-Recall:
+Recall:  
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_reference_Scalars.jpg">
-
+![](images/Tensorboard_reference_Recall.jpg) 
 
 
 ### Improve on the reference
@@ -109,15 +108,15 @@ How to modify the config files accordingly: https://github.com/tensorflow/models
 
 The model loss with augmentation :  
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_experiment1_Scalars.jpg">
+![](images/Tensorboard_experiment1_Scalars.jpg)
 
-Precision with Augmentation:
+Precision with Augmentation:  
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_experiment1_Precision.jpg">
+![](images/Tensorboard_experiment1_Precision.jpg)  
 
 Recall with Augmentation:
 
-<img src="https://github.com/Rakso75/nd013-c1-vision-starter/tree/main/images/Tensorboard_experiment1_Recall.jpg">
+![](images/Tensorboard_experiment1_Recall.jpg)  
 
 The loss is lower than the previous loss (un-augmented model). This is an indication of better performance. There should be more samples of augmented datapoints such as
 combining the contrast values with grayscale. Brightness can also be clamped within a limit instead of fixing it to 0.3
