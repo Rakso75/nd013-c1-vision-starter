@@ -53,7 +53,7 @@ In the dataset, we have to fit rectangular bounding boxes on the images with obj
 
 ![](images/10-random-images-9_night.png.jpg)  
 
-![](images/10-random-images-10_foggy.png)  
+![](images/10_random-images_foggy_1.png)  
 
 ![](images/10_random-images_contrast_1.png)  
 
