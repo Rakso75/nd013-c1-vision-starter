@@ -51,7 +51,7 @@ A notebook `Exploratory Data Analysis`  is provided, in which the analysis is pe
 ### Dataset analysis
 In the dataset, we have to fit rectangular bounding boxes on the images with objects ,which includes pedestrians, cyclists and cars.Images are taken from different places, and different weather conditions and at different time of the day (day/night).The image set contains diverse set of images of which some are blurry, clear, light and some are foggy or dark. A sample of 10 is shown in notebook `Exploratory Data Analysis`.  
 
-![](images/10-random-images-9_night.png.jpg)  
+![](images/10-random-images-9_night.png)  
 
 ![](images/10_random-images_foggy_1.png)  
 
